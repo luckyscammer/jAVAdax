@@ -11,12 +11,12 @@ public class Lab3 {
             String input = scanner.nextLine();
             StringBuilder textBuilder = new StringBuilder(input);
 
-            if (input.isEmpty() || input.matches("\\d+") || !input.matches(".*[" + Lab3.vowelsToCount + "].*")) {
+            if (input.isEmpty() || input.matches("\\d+")) {
                 System.out.println("Введення не відповідає умовам, спробуйте знову.");
                 textBuilder.setLength(0);
             } else {
-                System.out.println("Ви ввели відповідний рядок: " + textBuilder);
                 scanner.close();
+                System.out.println("Ви ввели відповідний рядок: " + textBuilder);
                 StringBuilder noSymbolsBuilder = deleteSymbols(textBuilder);
                 System.out.println("Відредагований текст без зайвих символів: " + noSymbolsBuilder);
                 String[] textBuilderWords = noSymbolsBuilder.toString().split("\\s+");
@@ -43,7 +43,7 @@ public class Lab3 {
                 textBuilder.deleteCharAt(i);
             }
         }
-        return textBuilder;
+        return new StringBuilder(textBuilder.toString().trim());
     }
 
     static int countVowels(String word) {
