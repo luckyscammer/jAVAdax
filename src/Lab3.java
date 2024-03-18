@@ -21,8 +21,8 @@ public class Lab3 {
                 System.out.println("Відредагований текст без зайвих символів: " + noSymbolsBuilder);
                 String[] textBuilderWords = noSymbolsBuilder.toString().split("\\s+");
                 Arrays.sort(textBuilderWords, (firstWord, secondWord) -> {
-                    int vowelsCount1 = countVowels(firstWord);
-                    int vowelsCount2 = countVowels(secondWord);
+                    int vowelsCount1 = countThoseVowels(firstWord);
+                    int vowelsCount2 = countThoseVowels(secondWord);
                     if (vowelsCount1 != vowelsCount2) {
                         return vowelsCount1 - vowelsCount2;
                     } else {
@@ -46,7 +46,7 @@ public class Lab3 {
         return new StringBuilder(textBuilder.toString().trim());
     }
 
-    static int countVowels(String word) {
+    static int countThoseVowels(String word) {
         int count = 0;
         for (int i = 0; i <= word.length() - 1; ++i) {
             if (Lab3.vowelsToCount.indexOf(word.charAt(i)) != -1) {
