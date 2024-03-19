@@ -71,37 +71,35 @@ public class Lab4 {
                                 [7] - Вихід""");
                         String input = getLine(scanner, "\n[+] Введіть обраний варіант: ");
                         boolean isAscending = ascendingCheck(scanner);
+                        String choice = "";
                         switch (input) {
                             case "1":
-                                Arrays.sort(vetementsArray, compareVetements("1", isAscending));
-                                printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
-                                return;
+                                choice = "1";
+                                break;
                             case "2":
-                                Arrays.sort(vetementsArray, compareVetements("2", isAscending));
-                                printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
-                                return;
+                                choice = "2";
+                                break;
                             case "3":
-                                Arrays.sort(vetementsArray, compareVetements("3", isAscending));
-                                printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
-                                return;
+                                choice = "3";
+                                break;
                             case "4":
-                                Arrays.sort(vetementsArray, compareVetements("4", isAscending));
-                                printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
-                                return;
+                                choice = "4";
+                                break;
                             case "5":
-                                Arrays.sort(vetementsArray, compareVetements("5", isAscending));
-                                printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
-                                return;
+                                choice = "5";
+                                break;
                             case "6":
-                                Arrays.sort(vetementsArray, compareVetements("6", isAscending));
-                                printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
-                                return;
+                                choice = "6";
+                                break;
                             case "7":
                                 System.out.println("\n[+] Ви успішно вийшли з програми. Гарного дня!");
                                 return;
                             default:
                                 System.out.println("\n[+] Було обрано неправильний варіант, спробуйте ще раз!");
                         }
+                        Arrays.sort(vetementsArray, compareVetements(choice, isAscending));
+                        printVetements(vetementsArray, "\n[+] Весь одяг після сортування:");
+                        return;
                     }
                 case "3":
                     System.out.println("\n[+] Ви успішно вийшли з програми. Гарного дня!");
